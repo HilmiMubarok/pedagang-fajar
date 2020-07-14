@@ -4,13 +4,13 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="dashboard.php">
               <span data-feather="home"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="kategori.php">
               <span data-feather="archive"></span>
               Kategori
             </a>

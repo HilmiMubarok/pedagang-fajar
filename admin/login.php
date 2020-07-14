@@ -52,7 +52,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" type="submit" name="btnlogin">
 								Login
 							</button>
 						</div>
@@ -67,9 +67,16 @@
 
 		include '../config/conn.php';
 
-		// if (login($_POST['username'], $_POST['password'])) {
-			
-		// }
+		if (isset($_POST['btnlogin'])) {
+			if (login($_POST['username'], $_POST['pass'])) {
+				$_SESSION['login'] = true;
+				echo "<script>alert('login sukses')</script>";
+				echo "<script>window.location.assign('dashboard.php')</script>";
+			} else {
+				echo "<script>alert('login gagal')</script>";
+				echo "<script>window.location.assign('login.php')</script>";
+			}
+		}
 
 	?>
 

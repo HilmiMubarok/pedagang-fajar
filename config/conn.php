@@ -24,7 +24,7 @@ function login($username, $password)
 
 	if ($hasil->num_rows > 0) {
 		$get_password = $hasil->fetch_assoc();
-		$respassword  = $get_password->password;
+		$respassword  = $get_password['password'];
 
 		if ($pwd !== $respassword) {
 			return false;
