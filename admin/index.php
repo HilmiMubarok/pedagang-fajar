@@ -11,7 +11,8 @@ include 'layouts/sidebar.php';
 
 if (isset($_GET['page'])) {
 	if ($_GET['page'] == "login") {
-		echo "<meta http-equiv='refresh' content='login.php;0'>";
+		// echo "<meta http-equiv='refresh' content='login.php;0'>";
+		header("location:login.php");
 	} elseif ($_GET['page'] == "dashboard") {
 		include 'dashboard.php';
 	}
