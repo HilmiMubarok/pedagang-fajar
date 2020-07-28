@@ -10,22 +10,16 @@ if (!isset($_SESSION['login'])) { header("location:login.php"); }
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <?php if (isset($_GET['page'])): ?>
-    	<?php if ($_GET['page'] == "add"): ?>
-    		<?php include 'add_kategori.php'; ?>
-    	<?php elseif($_GET['page'] == "edit" && isset($_GET['id'])): ?>
-    		<?php include 'edit_kategori.php'; ?>
-    	<?php elseif($_GET['page'] == "delete" && isset($_GET['id'])): ?>
-    		<?php include 'delete_kategori.php'; ?>
+    	<?php if ($_GET['page'] == "delete"): ?>
+    		<?php include 'delete_masukan.php'; ?>
     	<?php endif ?>
     <?php else: ?>
      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-       <h1 class="h2">Kategori</h1>
+       <h1 class="h2">Masukan</h1>
     </div>
-		<a href="?page=add" class="btn btn-primary mb-3">
-			Tambah
-		</a>
+		
 	<?php
-		$sql  = "SELECT * FROM kategori";
+		$sql  = "SELECT * FROM masukan ORDER BY id_masukan DESC";
 		$res  = $conn->query($sql);
 		$rows = [];
 		while ($row = $res->fetch_assoc()) {
@@ -36,7 +30,8 @@ if (!isset($_SESSION['login'])) { header("location:login.php"); }
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th>Nama Kategori</th>
+					<th>Nama</th>
+					<th>Pesan</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
@@ -44,12 +39,10 @@ if (!isset($_SESSION['login'])) { header("location:login.php"); }
 				<?php $no = 1; foreach ($rows as $data): ?>
 					<tr>
 						<td><?= $no++ ?></td>
-						<td><?= $data['nama_kategori'] ?></td>
+						<td><?= $data['nama'] ?></td>
+						<td><?= $data['pesan'] ?></td>
 						<td>
-							<a href="?page=edit&id=<?= $data['id_kategori'] ?>" class="btn btn-warning text-white btn-sm">
-								Edit
-							</a>
-							<a href="?page=delete&id=<?= $data['id_kategori'] ?>" class="btn btn-danger text-white btn-sm" onclick="return confirm('Apakah Yakin Ingin Menghapus Data Ini')">
+							<a href="?page=delete&id=<?= $data['id_masukan'] ?>" class="btn btn-danger text-white btn-sm" onclick="return confirm('Apakah Yakin Ingin Menghapus Data Ini')">
 								Delete
 							</a>
 						</td>

@@ -16,13 +16,19 @@
             </a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="produk.php">
               <span data-feather="shopping-cart"></span>
               Produk
             </a>
           </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link" href="masukan.php">
+              <span data-feather="shopping-cart"></span>
+              Masukan
+            </a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="logout.php">
               <span data-feather="log-out"></span>
               Keluar
             </a>

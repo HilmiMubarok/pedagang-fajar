@@ -1,7 +1,8 @@
 <?php
 
-include '../config/conn.php';
+session_start();
 
-if (logout('logged_in')) {
-	header("location:../admin/login.php");
-}
+session_destroy();
+unset($_SESSION['login']);
+
+header("location:login.php");

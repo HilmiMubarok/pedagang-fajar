@@ -37,9 +37,3 @@ function login($username, $password)
 	}
 
 }
-
-function logout($sess)
-{
-	unset($_SESSION[$sess]);
-	session_destroy();
-}
